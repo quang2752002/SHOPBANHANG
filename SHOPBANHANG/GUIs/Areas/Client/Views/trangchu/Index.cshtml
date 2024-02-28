@@ -1,0 +1,309 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Client/Views/Shared/_Layout2.cshtml";
+}
+@* slide *@
+<div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+@* xem chi tiết và thêm sản phẩm vào giỏ hàng *@
+
+<div class="modal fade" id="xemchitiet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>THÔNG TIN SẢN PHẨM</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <img id="img" src="" style="width:40px;height:40px;" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12 p-1">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    Tên sản phẩm
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" id="name" readonly="readonly" />
+                                            <input type="number" class="form-control" hidden id="idsp" />
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-1">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    Màu sắc
+                                                </span>
+                                            </div>
+
+
+                                            <input type="text" class="form-control" id="color" readonly="readonly" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-1">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    Xuất xứ
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" id="origin" readonly="readonly" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-1">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    Đơn giá
+                                                </span>
+                                            </div>
+                                            <input type="number" class="form-control" id="price" readonly="readonly" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-1">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    Số lượng tồn kho
+                                                </span>
+                                            </div>
+                                            <input type="number" class="form-control" id="number" readonly="readonly" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-1">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    Số lượng mua
+                                                </span>
+                                            </div>
+                                            <input type="number" class="form-control" id="quatity" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="button" id="create" class="btn btn-primary" data-bs-dismiss="modal">Thêm vào giỏ hàng</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+@* thong tin san pham *@
+<div class="card">
+    <div class="card-header" style="text-align:center;">
+        <h4>SẢN PHẨM MỚI NHẤT</h4>
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="search" />
+            </div>
+            <div class="col-md-3">
+                <span>Số dòng/trang</span>
+            </div>
+            <div class="col-md-2">
+                @Html.DropDownList("Pagesize", new SelectList(ViewBag.Pagesize, "ID", "ID"), new { @class = "form-control" })
+            </div>
+
+        </div>
+
+
+        <div class="row" id="tbData">
+
+        </div>
+        <table>
+            <tfoot>
+                <tr>
+                    <th colspan="100" id="pages">
+
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+
+
+        var trangchu = {
+            init: function () {
+                trangchu.search(1);
+                $("#search").change(function () {
+                    trangchu.search(1);
+                });
+                $("#Pagesize").change(function () {
+                    trangchu.search(1);
+                });
+                $("#create").click(function () {
+                    trangchu.AddCart();
+                });
+
+                //$('#xemchitiet').on('show.bs.modal', function (event) {
+                //        var button = $(event.relatedTarget)
+                //        var id = button.data('whatever');
+
+                //        trangchu.getSanpham(id);
+
+                //})
+                $('#xemchitiet').on('show.bs.modal', function (event) {
+
+                    var button = $(event.relatedTarget)
+                    var id = button.data('whatever');
+
+                    trangchu.getSanpham(id);
+                });
+            },
+
+            search: function (index) {
+                var name = $("#search").val();
+
+                var size = $("#Pagesize").val();
+                var form = new FormData()
+                form.append("name", name);
+                form.append("size", size);
+
+                form.append("index", index);
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'Json',
+                    contentType: false,
+                    processData: false,
+                    data: form,
+                    url: '/Client/trangchu/ShowList/',
+                    success: function (res) {
+                        $("#tbData").html(res.data);
+                        $("#pages").html(res.page);
+                    },
+                });
+            },
+            getSanpham: function (id) {
+
+                $.ajax({
+                    type: 'get',
+                    dataType: 'JSON',
+                    url: '/Client/trangchu/getSanpham/' + id,
+                    success: function (res) {
+                        $("#idsp").val(res.data.ID);
+                        $("#name").val(res.data.name);
+                        $("#color").val(res.data.name);
+                        $("#img").attr('src', res.data.img);
+                        $("#price").val(res.data.price);
+                        $("#origin").val(res.data.origin);
+
+                        $("#number").val(res.data.quatity);
+                    }
+                });
+            },
+            AddCart: function () {
+                var idsp = $('#idsp').val();
+                var price = $('#price').val();
+                var quatity = $('#quatity').val();
+                var form = new FormData()
+                form.append("idsp", idsp);
+                form.append("price", price);
+
+                form.append("quatity", quatity);
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'Json',
+                    contentType: false,
+                    processData: false,
+                    data: form,
+                    url: '/Client/trangchu/AddCart/',
+                    success: function (res) {
+                        if (res.state) {
+                            _layout.showtoast(res.mess);
+                        }
+                        else {
+                            window.location.href = "/Client/trangchu/login";
+                        }
+                    },
+                });
+            },
+
+
+        }
+
+
+
+        trangchu.init();
+        function goto(i) {
+            trangchu.search(i);
+        }
+    </script>
+}
+
